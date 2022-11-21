@@ -208,9 +208,9 @@ static void sprintkey( const char *input, unsigned char *key )
   }
 }
 
-int main() {
+int main(int argc, char* argv[]) {
   unsigned char input[65];
-  sprintkey("fcc659eca955591729400f38c6917e8ae0af1405b2a03b5a7074a74b0946a8d5",
+  sprintkey(argv[1],
     (unsigned char *) &input);
   sc_reduce32((unsigned char *)&input);
   print256bits_as_hex(input);
